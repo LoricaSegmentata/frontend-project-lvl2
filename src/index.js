@@ -26,9 +26,9 @@ const genDiff = (pathToFile1, pathToFile2) => {
     return config1[key] === config2[key]
       ? [...acc, `    ${key}: ${config1[key]}`]
       : [...acc, `  - ${key}: ${config1[key]}`, `  + ${key}: ${config2[key]}`];
-  }, []);
+  }, []).join('\n');
 
-  return `{\n${result.join('\n')}\n}`;
+  return `{\n${result}\n}`;
 };
 
 export default genDiff;
