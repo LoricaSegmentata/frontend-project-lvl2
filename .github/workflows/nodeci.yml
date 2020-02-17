@@ -17,7 +17,20 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install
-        run: make install
-      - name: run eslint
-        run: make lint
+      - name: npm install, build, and test
+        run: |
+          make install
+          make build
+          make test
+        env:
+          CI: true
+      - name: Run linter
+        run: |
+          make lint
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v2.4.0
+        env:
+          CC_TEST_REPORTER_ID: e6284a169aa25681ccd8ad29d8e2d17961eb4774893419ecd769cf1bd865c82b
+        with:
+          coverageCommand: make test-coverage
+
