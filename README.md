@@ -11,4 +11,8 @@ Gendiff is the CLI utility, which compares two configuration files and showing a
 `npm install -g gendiff`
 
 ## Launch
+### JSON
 [![asciicast](https://asciinema.org/a/fw8W666i7TgGq3E37vZQF3vqz.svg)](https://asciinema.org/a/fw8W666i7TgGq3E37vZQF3vqz)
+
+### YAML
+[![asciicast](https://asciinema.org/a/KvovC6dP4uZRMwH1F9oEg1MvC.svg)](https://asciinema.org/a/KvovC6dP4uZRMwH1F9oEg1MvC)
