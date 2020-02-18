@@ -2,5 +2,7 @@ node_modules
 dist
 before.json
 before.yml
+before.ini
 after.json
 after.yml
+after.ini
