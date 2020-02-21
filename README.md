@@ -10,12 +10,16 @@ Gendiff is the CLI utility, which compares two configuration files and showing a
 ## Install
 `npm install -g gendiff`
 
-## Launch
-### JSON
-[![asciicast](https://asciinema.org/a/fw8W666i7TgGq3E37vZQF3vqz.svg)](https://asciinema.org/a/fw8W666i7TgGq3E37vZQF3vqz)
+## Usage
+Gendiff supports .json, .yml and .ini formats.
+```
+Usage: gendiff [options] <firstConfig> <secondConfig>
 
-### YAML
-[![asciicast](https://asciinema.org/a/KvovC6dP4uZRMwH1F9oEg1MvC.svg)](https://asciinema.org/a/KvovC6dP4uZRMwH1F9oEg1MvC)
+Compares two configuration files and shows a difference.
 
-### ini
-[![asciicast](https://asciinema.org/a/MmeAJsNWH1dXi7jqyBMbe8jWY.svg)](https://asciinema.org/a/MmeAJsNWH1dXi7jqyBMbe8jWY)
+Options:
+  -V, --version        output the version number
+  -f, --format [type]  output format
+  -h, --help           output usage information
+```
+[![asciicast](https://asciinema.org/a/gm8bXJiZoyvzmOfPSRIrKdkaS.svg)](https://asciinema.org/a/gm8bXJiZoyvzmOfPSRIrKdkaS)
