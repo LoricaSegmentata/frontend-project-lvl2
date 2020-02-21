@@ -20,8 +20,10 @@
       },
       {
         name: 'setting3',
-        value1: true,
-        value2: { key: value },
+        value: true,
+        newValue: {
+          key: value
+        },
         status: 'changed',
       },
       {
@@ -46,7 +48,7 @@
 import _ from 'lodash';
 
 const buildAst = (config1, config2) => {
-  const keys = _.union(Object.keys(config1), Object.keys(config2));
+  const keys = _.union(Object.keys(config1), Object.keys(config2)).sort();
 
   return keys.map((key) => {
     if (!_.has(config2, key)) {
