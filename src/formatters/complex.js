@@ -11,7 +11,7 @@ const stringify = (item, depth) => {
   return item;
 };
 
-const render = (tree) => {
+const renderComplexDiff = (tree) => {
   const iter = (node, depth) => {
     const result = node.map((n) => {
       const str = {
@@ -36,4 +36,4 @@ const render = (tree) => {
   return iter(tree, 1);
 };
 
-export default render;
+export default renderComplexDiff;
