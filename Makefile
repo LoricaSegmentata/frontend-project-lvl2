@@ -22,3 +22,8 @@ test-coverage:
 
 test-watch:
 	npm test -- --watch
+
+install-gendiff:
+	npm install
+	npm publish --dry-run
+	npm link
