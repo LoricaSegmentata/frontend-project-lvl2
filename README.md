@@ -8,7 +8,8 @@ Gendiff is the CLI utility, which compares two configuration files and showing a
 [![Node CI](https://github.com/Deim-Sha/frontend-project-lvl2/workflows/Node%20CI/badge.svg)](https://github.com/Deim-Sha/frontend-project-lvl2/actions)
 
 ## Install
-`npm install -g gendiff`
+Clone this repository, then run following command in repository folder:
+`make install-gendiff`
 
 ## Usage
 Gendiff supports .json, .yml and .ini formats.
@@ -22,4 +23,7 @@ Options:
   -f, --format [type]  output format
   -h, --help           output usage information
 ```
+### Complex format
 [![asciicast](https://asciinema.org/a/gm8bXJiZoyvzmOfPSRIrKdkaS.svg)](https://asciinema.org/a/gm8bXJiZoyvzmOfPSRIrKdkaS)
+### Plain format
+[![asciicast](https://asciinema.org/a/jWAT8IrXXhP3Ly9B0RPG1PRVR.svg)](https://asciinema.org/a/jWAT8IrXXhP3Ly9B0RPG1PRVR)
