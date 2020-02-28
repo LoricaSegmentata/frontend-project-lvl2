@@ -25,14 +25,26 @@ Options:
   -h, --help           output usage information
 ```
 ### Output
-* Default
+* Default (step 3)
+
+[![asciicast](https://asciinema.org/a/fw8W666i7TgGq3E37vZQF3vqz.svg)](https://asciinema.org/a/fw8W666i7TgGq3E37vZQF3vqz)
+
+* Default (step 5)
+
+[![asciicast](https://asciinema.org/a/KvovC6dP4uZRMwH1F9oEg1MvC.svg)](https://asciinema.org/a/KvovC6dP4uZRMwH1F9oEg1MvC)
+
+* Default (step 6)
+
+[![asciicast](https://asciinema.org/a/MmeAJsNWH1dXi7jqyBMbe8jWY.svg)](https://asciinema.org/a/MmeAJsNWH1dXi7jqyBMbe8jWY)
+
+* Default (step 7)
 
 [![asciicast](https://asciinema.org/a/gm8bXJiZoyvzmOfPSRIrKdkaS.svg)](https://asciinema.org/a/gm8bXJiZoyvzmOfPSRIrKdkaS)
 
-* Plain
+* Plain (step 8)
 
 [![asciicast](https://asciinema.org/a/jWAT8IrXXhP3Ly9B0RPG1PRVR.svg)](https://asciinema.org/a/jWAT8IrXXhP3Ly9B0RPG1PRVR)
 
-* JSON
+* JSON (step 9)
 
 [![asciicast](https://asciinema.org/a/vXgmB0h0SpdszXuDKDJLDZAr9.svg)](https://asciinema.org/a/vXgmB0h0SpdszXuDKDJLDZAr9)
