@@ -26,8 +26,13 @@ Options:
 ```
 ### Output
 * Default
+
 [![asciicast](https://asciinema.org/a/gm8bXJiZoyvzmOfPSRIrKdkaS.svg)](https://asciinema.org/a/gm8bXJiZoyvzmOfPSRIrKdkaS)
+
 * Plain
+
 [![asciicast](https://asciinema.org/a/jWAT8IrXXhP3Ly9B0RPG1PRVR.svg)](https://asciinema.org/a/jWAT8IrXXhP3Ly9B0RPG1PRVR)
+
 * JSON
+
 [![asciicast](https://asciinema.org/a/vXgmB0h0SpdszXuDKDJLDZAr9.svg)](https://asciinema.org/a/vXgmB0h0SpdszXuDKDJLDZAr9)
