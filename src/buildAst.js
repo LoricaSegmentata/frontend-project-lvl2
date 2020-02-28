@@ -20,8 +20,8 @@
       },
       {
         name: 'setting3',
-        value: true,
-        newValue: {
+        value1: true,
+        value2: {
           key: value
         },
         status: 'changed',
