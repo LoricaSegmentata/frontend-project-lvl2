@@ -45,6 +45,7 @@ const buildAst = (config1, config2) => {
       return {
         name: key,
         children: buildAst(config1[key], config2[key]),
+        status: 'parent',
       };
     }
 
