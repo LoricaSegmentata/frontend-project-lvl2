@@ -1,13 +1,13 @@
 import _ from 'lodash';
 
 const stringify = (item) => {
-  if (item instanceof Object) {
-    return '[complex value]';
+  if (!_.isObject(item) && !_.isString(item)) {
+    return item;
   }
-  if (typeof item === 'string') {
+  if (_.isString(item)) {
     return `'${item}'`;
   }
-  return item;
+  return '[complex value]';
 };
 
 const renderPlainDiff = (tree) => {

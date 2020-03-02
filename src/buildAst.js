@@ -1,12 +1,16 @@
 import _ from 'lodash';
 
 const stringify = (item) => {
-  if (item instanceof Object) {
-    const keys = Object.keys(item);
-    return keys.reduce((acc, key) => ({ ...acc, [key]: stringify(item[key]) }), {});
+  if (!_.isObject(item) && !_.isNumber(item)) {
+    return item;
   }
 
-  return typeof item === 'number' ? String(item) : item;
+  if (_.isNumber(item)) {
+    return String(item);
+  }
+
+  const keys = Object.keys(item);
+  return keys.reduce((acc, key) => ({ ...acc, [key]: stringify(item[key]) }), {});
 };
 
 const buildAst = (config1, config2) => {
@@ -37,7 +41,7 @@ const buildAst = (config1, config2) => {
       };
     }
 
-    if (config1[key] instanceof Object && config2[key] instanceof Object) {
+    if (_.isObject(config1[key]) && _.isObject(config2[key])) {
       return {
         name: key,
         children: buildAst(config1[key], config2[key]),

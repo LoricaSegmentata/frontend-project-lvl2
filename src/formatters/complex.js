@@ -3,12 +3,13 @@ import _ from 'lodash';
 const getIndent = (depth) => '    '.repeat(depth);
 
 const stringify = (item, depth) => {
-  if (item instanceof Object) {
-    const keys = Object.keys(item);
-    const result = keys.map((key) => `${getIndent(depth + 1)}${key}: ${item[key]}`).join('\n');
-    return `{\n${result}\n${getIndent(depth)}}`;
+  if (!_.isObject(item)) {
+    return item;
   }
-  return item;
+
+  const keys = Object.keys(item);
+  const result = keys.map((key) => `${getIndent(depth + 1)}${key}: ${item[key]}`).join('\n');
+  return `{\n${result}\n${getIndent(depth)}}`;
 };
 
 const renderComplexDiff = (tree) => {
