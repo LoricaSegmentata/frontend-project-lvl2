@@ -7,30 +7,20 @@ const stringify = (item) => {
   if (_.isString(item)) {
     return `'${item}'`;
   }
+
   return '[complex value]';
 };
 
-const renderPlainDiff = (tree) => {
-  const iter = (node, propertyPath) => {
-    const result = node.map((n) => {
-      const newPath = [...propertyPath, n.name];
-      const str = {
-        deleted: `Property '${newPath.join('.')}' was deleted`,
-        added: `Property '${newPath.join('.')}' was added with value: ${stringify(n.value)}`,
-        unchanged: '',
-        changed: `Property '${newPath.join('.')}' was changed from ${stringify(n.value1)} to ${stringify(n.value2)}`,
-      };
-
-      if (_.has(n, 'children')) {
-        return iter(n.children, newPath);
-      }
-      return str[n.status];
-    });
-
-    return _.flatten(result).filter((v) => v !== '').join('\n');
+const renderDiff = (tree, pathAcc) => {
+  const rendering = {
+    deleted: (node) => `Property '${[...pathAcc, node.name].join('.')}' was deleted`,
+    added: (node) => `Property '${[...pathAcc, node.name].join('.')}' was added with value: ${stringify(node.value)}`,
+    changed: (node) => `Property '${[...pathAcc, node.name].join('.')}' was changed from ${stringify(node.value1)} to ${stringify(node.value2)}`,
+    parent: (node) => renderDiff(node.children, [...pathAcc, node.name]),
   };
+  const filtered = tree.filter((node) => node.status !== 'unchanged');
 
-  return iter(tree, []);
+  return filtered.map((node) => rendering[node.status](node)).join('\n');
 };
 
-export default renderPlainDiff;
+export default (tree) => renderDiff(tree, []);
