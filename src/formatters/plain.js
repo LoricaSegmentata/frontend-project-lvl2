@@ -11,10 +11,12 @@ const stringify = (item) => {
   return '[complex value]';
 };
 
+const makePath = (node, pathAcc) => [...pathAcc, node.name].join('.');
+
 const rendering = {
-  deleted: (node, pathAcc) => `Property '${[...pathAcc, node.name].join('.')}' was deleted`,
-  added: (node, pathAcc) => `Property '${[...pathAcc, node.name].join('.')}' was added with value: ${stringify(node.value)}`,
-  changed: (node, pathAcc) => `Property '${[...pathAcc, node.name].join('.')}' was changed from ${stringify(node.oldValue)} to ${stringify(node.newValue)}`,
+  deleted: (node, pathAcc) => `Property '${makePath(node, pathAcc)}' was deleted`,
+  added: (node, pathAcc) => `Property '${makePath(node, pathAcc)}' was added with value: ${stringify(node.value)}`,
+  changed: (node, pathAcc) => `Property '${makePath(node, pathAcc)}' was changed from ${stringify(node.oldValue)} to ${stringify(node.newValue)}`,
   parent: (node, pathAcc, render) => render(node.children, [...pathAcc, node.name]),
 };
 
