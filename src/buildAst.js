@@ -51,8 +51,8 @@ const buildAst = (config1, config2) => {
 
     return {
       name: key,
-      value1: stringify(config1[key]),
-      value2: stringify(config2[key]),
+      oldValue: stringify(config1[key]),
+      newValue: stringify(config2[key]),
       status: 'changed',
     };
   });

@@ -15,7 +15,7 @@ const renderDiff = (tree, pathAcc) => {
   const rendering = {
     deleted: (node) => `Property '${[...pathAcc, node.name].join('.')}' was deleted`,
     added: (node) => `Property '${[...pathAcc, node.name].join('.')}' was added with value: ${stringify(node.value)}`,
-    changed: (node) => `Property '${[...pathAcc, node.name].join('.')}' was changed from ${stringify(node.value1)} to ${stringify(node.value2)}`,
+    changed: (node) => `Property '${[...pathAcc, node.name].join('.')}' was changed from ${stringify(node.oldValue)} to ${stringify(node.newValue)}`,
     parent: (node) => renderDiff(node.children, [...pathAcc, node.name]),
   };
   const filtered = tree.filter((node) => node.status !== 'unchanged');

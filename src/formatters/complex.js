@@ -19,8 +19,8 @@ const renderDiff = (tree, depth) => {
     added: (node) => `${getIndent(depth - 1)}  + ${node.name}: ${stringify(node.value, depth)}`,
     unchanged: (node) => `${getIndent(depth)}${node.name}: ${stringify(node.value, depth)}`,
     changed: (node) => [
-      `${getIndent(depth - 1)}  - ${node.name}: ${stringify(node.value1, depth)}`,
-      `${getIndent(depth - 1)}  + ${node.name}: ${stringify(node.value2, depth)}`,
+      `${getIndent(depth - 1)}  - ${node.name}: ${stringify(node.oldValue, depth)}`,
+      `${getIndent(depth - 1)}  + ${node.name}: ${stringify(node.newValue, depth)}`,
     ],
     parent: (node) => `${getIndent(depth)}${node.name}: {\n${renderDiff(node.children, depth + 1)}\n${getIndent(depth)}}`,
   };
