@@ -10,15 +10,20 @@ const readFile = (filePath) => {
   return content;
 };
 
+const getFileType = (filePath) => {
+  const ext = path.extname(filePath);
+  return ext.slice(1);
+};
+
 const genDiff = (filePath1, filePath2, format = 'complex') => {
   const content1 = readFile(filePath1);
   const content2 = readFile(filePath2);
 
-  const ext1 = path.extname(filePath1);
-  const ext2 = path.extname(filePath2);
+  const type1 = getFileType(filePath1);
+  const type2 = getFileType(filePath2);
 
-  const config1 = parse(ext1, content1);
-  const config2 = parse(ext2, content2);
+  const config1 = parse(type1, content1);
+  const config2 = parse(type2, content2);
 
   const ast = buildAst(config1, config2);
 
